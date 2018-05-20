@@ -52,7 +52,12 @@ app.post('/', function(req, res){
 
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify({'speech': output, 'displayText': output}));
-})
+//   return res.json({
+//     speech: output,
+//     displayText: output,
+//     source: "museum-bot"
+//   });
+});
 
 /////////////////////////////////////////
 //var path = require('path');

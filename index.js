@@ -1,27 +1,29 @@
-var express = require('express');
-var app = express();
-var server = require('http').createServer(app);
-var port = process.argv[2] || 5000;
+"use strict"
 
-server.listen(port, function(){
-  console.log('Server listening at port %d', port);
-  console.log('Server dirname : ', __dirname);
+var express = require('express'); //
+var app = express(); //
+//// var server = require('http').createServer(app);
+//// var port = process.argv[2] || 5000;
+
+server.listen(process.env.PORT || 5000, function(){
+  console.log('Server listening');
+  ////console.log('Server listening at port %d', port);
+  ////console.log('Server dirname : ', __dirname);
 });
 
 var bodyParser = require('body-parser'); //
-app.use(express.static(__dirname + '/public'));
-// app.use(express.bodyParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+//// app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json()); //
+app.use(bodyParser.urlencoded({extended: true})); //
 
 
-//var fs = require('fs');
-//var obj = JSON.parse(fs.readFileSync('info.json', 'utf8'));
+////var fs = require('fs');
+////var obj = JSON.parse(fs.readFileSync('info.json', 'utf8'));
 
-//console.log('Answer: '+ obj['금동신발']['재질']); //// debugging
+////console.log('Answer: '+ obj['금동신발']['재질']); //// debugging
 
 app.post('/echo', function(req, res){
-  var output = 
+  var speech = 
       req.body.queryResult &&
       req.body.queryResult.parameters &&
       req.body.queryresult.parameters.echoText  
@@ -30,7 +32,7 @@ app.post('/echo', function(req, res){
   return res.json({
     speech: speech,
     displayText: speech,
-    source: "webhookk-echo-sample"
+    source: "webhook-echo-sample"
   });
 });
      

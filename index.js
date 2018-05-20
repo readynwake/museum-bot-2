@@ -22,37 +22,37 @@ var obj = JSON.parse(fs.readFileSync('info.json', 'utf8'));
 
 console.log('Answer: '+ obj['금동신발']['재질']); //// debugging
 
-// app.post('/echo', function(req, res){
-//   var speech = 
-//       req.body.queryResult &&
-//       req.body.queryResult.parameters &&
-//       req.body.queryresult.parameters.echoText  
-//       ? req.body.queryresult.parameters.echoText  
-//       : "Seems like some problem. Speak again.";
-//   return res.json({
-//     speech: speech,
-//     displayText: speech,
-//     source: "museum-bot"
-//   });
-// });
+app.post('/', function(req, res){
+  var speech = 
+      req.body.queryResult &&
+      req.body.queryResult.parameters &&
+      req.body.queryresult.parameters.echoText  
+      ? req.body.queryresult.parameters.echoText  
+      : "Seems like some problem. Speak again.";
+  return res.json({
+    speech: speech,
+    displayText: speech,
+    source: "museum-bot"
+  });
+});
      
       
 //app.all('/', function(req, res){
 //app.get('/', function(req, res){
 
-app.post('/', function(req, res){
-  console.log('req: \n' + JSON.stringify(req.body));
-  //var item = req.body.result.parameters['item'];
-  var item = req.body.queryResult.parameters['item'];
-  var material = req.body.queryResult.parameters['material'];
-  var size = req.body.queryResult.parameters['size'];
-  var discover_time = req.body.queryResult.parameters['discover_time'];
+// app.post('/', function(req, res){
+//   console.log('req: \n' + JSON.stringify(req.body));
+//   //var item = req.body.result.parameters['item'];
+//   var item = req.body.queryResult.parameters['item'];
+//   var material = req.body.queryResult.parameters['material'];
+//   var size = req.body.queryResult.parameters['size'];
+//   var discover_time = req.body.queryResult.parameters['discover_time'];
 
-  var output = "답변드립니다. " + obj[item][material];
+//   var output = "답변드립니다. " + obj[item][material];
 
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({'speech': output, 'displayText': output}));
-})
+//   res.setHeader('Content-Type', 'application/json');
+//   res.send(JSON.stringify({'speech': output, 'displayText': output}));
+// })
 
 /////////////////////////////////////////
 //var path = require('path');

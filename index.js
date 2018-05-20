@@ -44,9 +44,10 @@ app.post('/', function (request, response) {
     console.log('request: \n' + JSON.stringify(request.body));
     //var item = req.body.result.parameters['item'];
     var item = request.body.queryResult.parameters['item'];
+    var name = request.body.queryResult.parameters['name'];
     var material = request.body.queryResult.parameters['material'];
     var size = request.body.queryResult.parameters['size'];
-    var discover_time = request.body.queryResult.parameters['discoverTime'];
+    var discoverTime = request.body.queryResult.parameters['discoverTime'];
 
     let action = (request.body.queryResult.action) ? request.body.queryResult.action: 'default';
 
@@ -69,7 +70,7 @@ app.post('/', function (request, response) {
             sendResponse(responseToUser);
         },
         'get.item.discoverTime': () => {
-            let responseToUser = { fulfillmentText: '답변니다. ' + obj[item][discoverTime] };
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][discoverTime] };
             sendResponse(responseToUser);
         },
         'default': () => {

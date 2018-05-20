@@ -21,7 +21,8 @@ var obj = JSON.parse(fs.readFileSync('info.json', 'utf8'));
 console.log('Answer: '+ obj['금동신발']['재질']); //// debugging
 
 //app.all('/', function(req, res){
-app.post('/info', function(req, res){
+//app.get('/', function(req, res){
+app.post('/', function(req, res){
   console.log('req: \n' + JSON.stringify(req.body));
   //var item = req.body.result.parameters['item'];
   var item = req.body.queryResult.parameters['item'];

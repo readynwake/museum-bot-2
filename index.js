@@ -46,7 +46,7 @@ app.post('/', function (request, response) {
     var item = request.body.queryResult.parameters['item'];
     var material = request.body.queryResult.parameters['material'];
     var size = request.body.queryResult.parameters['size'];
-    var discover_time = request.body.queryResult.parameters['discover_time'];
+    var discover_time = request.body.queryResult.parameters['discoverTime'];
 
     let action = (request.body.queryResult.action) ? request.body.queryResult.action: 'default';
 
@@ -62,6 +62,14 @@ app.post('/', function (request, response) {
         },
         'get.item.size': () => {
             let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][size] };
+            sendResponse(responseToUser);
+        },
+        'get.item.material': () => {
+            let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][material] };
+            sendResponse(responseToUser);
+        },
+        'get.item.discover.time': () => {
+            let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][discoverTime] };
             sendResponse(responseToUser);
         },
         'default': () => {

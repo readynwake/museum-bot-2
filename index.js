@@ -15,10 +15,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-var fs = require('fs');
-var obj = JSON.parse(fs.readFileSync('info.json', 'utf8'));
+//var fs = require('fs');
+//var obj = JSON.parse(fs.readFileSync('info.json', 'utf8'));
 
-console.log('Answer: '+ obj['금동신발']['재질']); //// debugging
+//console.log('Answer: '+ obj['금동신발']['재질']); //// debugging
 
 app.post('/echo', function(req, res){
   var output = 

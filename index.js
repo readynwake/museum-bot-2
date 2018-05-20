@@ -47,7 +47,7 @@ app.post('/', function (request, response) {
     var name = request.body.queryResult.parameters['name'];
     var material = request.body.queryResult.parameters['material'];
     var size = request.body.queryResult.parameters['size'];
-    var discoverTime = request.body.queryResult.parameters['discoverTime'];
+    var era = request.body.queryResult.parameters['era'];
 
     let action = (request.body.queryResult.action) ? request.body.queryResult.action: 'default';
 
@@ -69,8 +69,8 @@ app.post('/', function (request, response) {
             let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][material] };
             sendResponse(responseToUser);
         },
-        'get.item.discoverTime': () => {
-            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][discoverTime] };
+        'get.item.era': () => {
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][era] };
             sendResponse(responseToUser);
         },
         'default': () => {

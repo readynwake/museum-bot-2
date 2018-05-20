@@ -48,7 +48,7 @@ app.post('/', function (request, response) {
     var size = request.body.queryResult.parameters['size'];
     var discover_time = request.body.queryResult.parameters['discover_time'];
 
-    let action = (request.body.queryResult.action) ? request.body.queryResult.action ; "default';
+    let action = (request.body.queryResult.action) ? request.body.queryResult.action: 'default';
 
 
     const actionHandlers = {

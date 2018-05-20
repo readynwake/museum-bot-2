@@ -57,23 +57,23 @@ app.post('/', function (request, response) {
             sendResponse(responseToUser);
         },
         'get.item.name': () => {
-            let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][name] };
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][name] };
             sendResponse(responseToUser);
         },
         'get.item.size': () => {
-            let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][size] };
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][size] };
             sendResponse(responseToUser);
         },
         'get.item.material': () => {
-            let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][material] };
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][material] };
             sendResponse(responseToUser);
         },
         'get.item.discoverTime': () => {
-            let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][discoverTime] };
+            let responseToUser = { fulfillmentText: '답변니다. ' + obj[item][discoverTime] };
             sendResponse(responseToUser);
         },
         'default': () => {
-            let responseToUser = { fulfillmentText: '디폴트 액션 처리' };
+            let responseToUser = { fulfillmentText: '아직 입력되지 않은 질문입니다.' };
             sendResponse(responseToUser);
         }
     };

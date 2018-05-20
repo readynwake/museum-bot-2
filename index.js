@@ -36,7 +36,7 @@ app.get('/', function(req, res){
 })
 
 /////////////////////////////////////////
-var path = require('path');
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+//var path = require('path');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'ejs');
 /////////////////////////////////////////

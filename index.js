@@ -53,8 +53,7 @@ app.post('/', function(req, res){
   ////res.setHeader('Content-Type', 'application/json');
   ////res.send(JSON.stringify({'speech': output, 'displayText': output}));
   return res.json({
-    speech: output,
-    displayText: output,
+    fulfillmentText: output,
     source: "museum-bot"
   });
 });

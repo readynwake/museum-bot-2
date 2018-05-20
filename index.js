@@ -43,14 +43,10 @@ console.log('Answer: '+ obj['금동신발']['재질']); //// debugging
 app.post('/', function(req, res){
   console.log('req: \n' + JSON.stringify(req.body));
   //var item = req.body.result.parameters['item'];
-//   var item = req.body.queryResult.parameters['item'];
-//   var material = req.body.queryResult.parameters['material'];
-//   var size = req.body.queryResult.parameters['size'];
-//   var discover_time = req.body.queryResult.parameters['discover_time'];
-  var item = req.queryResult.parameters['item'];
-  var material = req.queryResult.parameters['material'];
-  var size = req.queryResult.parameters['size'];
-  var discover_time = req.queryResult.parameters['discover_time'];
+  var item = req.body.queryResult.parameters['item'];
+  var material = req.body.queryResult.parameters['material'];
+  var size = req.body.queryResult.parameters['size'];
+  var discover_time = req.body.queryResult.parameters['discover_time'];
 
   var output = "답변드립니다. " + obj[item][size];
 

@@ -5,7 +5,7 @@ var app = express(); //
 //// var server = require('http').createServer(app);
 //// var port = process.argv[2] || 5000;
 
-server.listen(process.env.PORT || 5000, function(){
+app.listen(process.env.PORT || 5000, function(){
   console.log('Server listening');
   ////console.log('Server listening at port %d', port);
   ////console.log('Server dirname : ', __dirname);

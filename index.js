@@ -52,6 +52,10 @@ app.post('/', function (request, response) {
 
 
     const actionHandlers = {
+        'get.item': () => {
+            let responseToUser = { fulfillmentText: item+'에 대해 알려드릴게요. 무엇이 궁금하신가요?'};
+            sendResponse(responseToUser);
+        },
         'get.item.name': () => {
             let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][name] };
             sendResponse(responseToUser);

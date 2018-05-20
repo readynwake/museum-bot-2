@@ -50,13 +50,13 @@ app.post('/', function(req, res){
 
   var output = "답변드립니다. " + obj[item][material];
 
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({'speech': output, 'displayText': output}));
-//   return res.json({
-//     speech: output,
-//     displayText: output,
-//     source: "museum-bot"
-//   });
+  ////res.setHeader('Content-Type', 'application/json');
+  ////res.send(JSON.stringify({'speech': output, 'displayText': output}));
+  return res.json({
+    speech: output,
+    displayText: output,
+    source: "museum-bot"
+  });
 });
 
 /////////////////////////////////////////

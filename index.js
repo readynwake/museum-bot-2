@@ -68,7 +68,7 @@ app.post('/', function (request, response) {
             let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][material] };
             sendResponse(responseToUser);
         },
-        'get.item.discover.time': () => {
+        'get.item.discoverime': () => {
             let responseToUser = { fulfillmentText: '답변입니다.' + obj[item][discoverTime] };
             sendResponse(responseToUser);
         },

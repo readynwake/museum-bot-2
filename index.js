@@ -47,7 +47,12 @@ app.post('/', function (request, response) {
     var name = request.body.queryResult.parameters['name'];
     var material = request.body.queryResult.parameters['material'];
     var size = request.body.queryResult.parameters['size'];
-    var era = request.body.queryResult.parameters['era'];
+    var who = request.body.queryResult.parameters['who'];
+    var when = request.body.queryResult.parameters['when'];
+    var where = request.body.queryResult.parameters['where'];
+    var what = request.body.queryResult.parameters['where'];
+    var how = request.body.queryResult.parameters['how'];
+    var why = request.body.queryResult.parameters['why'];
 
     let action = (request.body.queryResult.action) ? request.body.queryResult.action: 'default';
 
@@ -58,15 +63,15 @@ app.post('/', function (request, response) {
             sendResponse(responseToUser);
         },
         'get.item.who': () => {
-            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][name] };
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][who] };
             sendResponse(responseToUser);
         },
         'get.item.who.when': () => {
-            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][size] };
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][who][when] };
             sendResponse(responseToUser);
         },
         'get.item.who.when.what': () => {
-            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][material] };
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][who][when][what] };
             sendResponse(responseToUser);
         },
         'get.item.era': () => {

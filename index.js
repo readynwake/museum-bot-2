@@ -57,15 +57,15 @@ app.post('/', function (request, response) {
             let responseToUser = { fulfillmentText: item+'에 대해 알려드릴게요. 무엇이 궁금하신가요?'};
             sendResponse(responseToUser);
         },
-        'get.item.name': () => {
+        'get.item.who': () => {
             let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][name] };
             sendResponse(responseToUser);
         },
-        'get.item.size': () => {
+        'get.item.who.when': () => {
             let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][size] };
             sendResponse(responseToUser);
         },
-        'get.item.material': () => {
+        'get.item.who.when.what': () => {
             let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][material] };
             sendResponse(responseToUser);
         },

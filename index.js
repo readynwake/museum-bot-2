@@ -50,7 +50,7 @@ app.post('/', function (request, response) {
     var who = request.body.queryResult.parameters['who'];
     var when = request.body.queryResult.parameters['when'];
     var where = request.body.queryResult.parameters['where'];
-    var what = request.body.queryResult.parameters['where'];
+    var what = request.body.queryResult.parameters['what'];
     var how = request.body.queryResult.parameters['how'];
     var why = request.body.queryResult.parameters['why'];
 

@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true })); //
 var fs = require('fs');
 var obj = JSON.parse(fs.readFileSync('info.json', 'utf8'));
 
-//console.log('Answer: ' + obj['금동신발']['재질']); //// debugging
+console.log('Answer: ' + obj['금동신발']['재질']); //// debugging
 
 // app.post('/', function(req, res){
 //   var speech = 
@@ -47,12 +47,7 @@ app.post('/', function (request, response) {
     var name = request.body.queryResult.parameters['name'];
     var material = request.body.queryResult.parameters['material'];
     var size = request.body.queryResult.parameters['size'];
-    var who = request.body.queryResult.parameters['who'];
-    var when = request.body.queryResult.parameters['when'];
-    var where = request.body.queryResult.parameters['where'];
-    var what = request.body.queryResult.parameters['what'];
-    var how = request.body.queryResult.parameters['how'];
-    var why = request.body.queryResult.parameters['why'];
+    var era = request.body.queryResult.parameters['era'];
 
     let action = (request.body.queryResult.action) ? request.body.queryResult.action: 'default';
 
@@ -62,16 +57,16 @@ app.post('/', function (request, response) {
             let responseToUser = { fulfillmentText: item+'에 대해 알려드릴게요. 무엇이 궁금하신가요?'};
             sendResponse(responseToUser);
         },
-        'get.item.who': () => {
-            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][who] };
+        'get.item.name': () => {
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][name] };
             sendResponse(responseToUser);
         },
-        'get.item.who.when': () => {
-            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][who][when] };
+        'get.item.size': () => {
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][size] };
             sendResponse(responseToUser);
         },
-        'get.item.who.when.what': () => {
-            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][who][when][what] };
+        'get.item.material': () => {
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[item][material] };
             sendResponse(responseToUser);
         },
         'get.item.era': () => {

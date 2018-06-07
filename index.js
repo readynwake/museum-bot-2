@@ -40,6 +40,18 @@ app.post('/', function (request, response) {
             sendResponse(responseToUser);
         },
    
+        'what.who': () => {
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[what][who]};
+            sendResponse(responseToUser);
+        },
+        
+        
+        'what.when.how': () => {
+            let responseToUser = { fulfillmentText: '답변드립니다. ' + obj[what][when][how]};
+            sendResponse(responseToUser);
+        },
+        
+        
         'default': () => {
             let responseToUser = { fulfillmentText: '아직 입력되지 않은 질문입니다.' };
             sendResponse(responseToUser);

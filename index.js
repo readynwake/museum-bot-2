@@ -81,13 +81,14 @@ app.post('/', function (request, response) {
     actionHandlers[action]();
 
     function sendResponse(responseToUser) {
-        if (typeof responseToUser == 'string') 
+        // if (typeof responseToUser === 'string')
+        if (responseToUser == "경상북도 김천시 교동에 있는 조선시대의 정자입니다. "
         {
             let responseJson = { fulfillmentText: responseToUser };
             response.json(responseJson);
         }
         
-        else if (responseToUser = "undefined")
+        else if (responseToUser == "undefined")
         {
             let responseJson = { fulfillmentText: 'DB에 없는내용' };
             response.json(responseJson);

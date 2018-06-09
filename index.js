@@ -81,11 +81,20 @@ app.post('/', function (request, response) {
     actionHandlers[action]();
 
     function sendResponse(responseToUser) {
-        if (typeof responseToUser === 'string') {
+        if (typeof responseToUser == 'string') 
+        {
             let responseJson = { fulfillmentText: responseToUser };
             response.json(responseJson);
         }
-        else {
+        
+        else if (responseToUser = "undefined")
+        {
+            let responseJson = { fulfillmentText: 'DB에 없는내용' };
+            response.json(responseJson);
+        }
+        
+        else
+        {
             let responseJson = {};
             responseJson.fulfillmentText = responseToUser.fulfillmentText;
             if (responseToUser.fulfillmentMessages) {

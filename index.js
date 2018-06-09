@@ -84,10 +84,8 @@ app.post('/', function (request, response) {
         if (typeof responseToUser === 'string') {
             let responseJson = { fulfillmentText: responseToUser };
             response.json(responseJson);
-        },
-        
-
-        else  {
+        }
+        else {
             let responseJson = {};
             responseJson.fulfillmentText = responseToUser.fulfillmentText;
             if (responseToUser.fulfillmentMessages) {

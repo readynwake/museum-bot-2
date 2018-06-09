@@ -35,34 +35,34 @@ app.post('/', function (request, response) {
 
     const actionHandlers = {
         'what.how': () => {
-            let responseToUser = { fulfillmentText: ' ' + obj[what][how]};
+            let responseToUser = { fulfillmentText: obj[what][how]};
             sendResponse(responseToUser);
         },
 
         'what.how.why': () => {
-            let responseToUser = { fulfillmentText: ' ' + obj[what][how][why]};
+            let responseToUser = { fulfillmentText: obj[what][how][why]};
             sendResponse(responseToUser);
         },
 
         'what.when.how': () => {
-            let responseToUser = { fulfillmentText: ' ' + obj[what][when][how]};
+            let responseToUser = { fulfillmentText: obj[what][when][how]};
             sendResponse(responseToUser);
         },
         
                 
         'what.where.how': () => {
-            let responseToUser = { fulfillmentText: ' ' + obj[what][where][how]};
+            let responseToUser = { fulfillmentText: obj[what][where][how]};
             sendResponse(responseToUser);
         },
         
         
         'what.who': () => {
-            let responseToUser = { fulfillmentText: ' ' + obj[what][who]};
+            let responseToUser = { fulfillmentText: obj[what][who]};
             sendResponse(responseToUser);
         },
        
         'what.who.how': () => {
-            let responseToUser = { fulfillmentText: ' ' + obj[what][who][how]};
+            let responseToUser = { fulfillmentText: obj[what][who][how]};
             sendResponse(responseToUser);
         },
 

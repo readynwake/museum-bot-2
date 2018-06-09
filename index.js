@@ -85,6 +85,12 @@ app.post('/', function (request, response) {
             let responseJson = { fulfillmentText: responseToUser };
             response.json(responseJson);
         }
+        
+       elseif (responseToUser = "undefined") {
+            let responseJson = { fulfillmentText: '죄송합니다. 정보가 없는 내용입니다. 다른 궁금한건 없으신가요?' };
+            response.json(responseJson);
+        }
+        
         else {
             let responseJson = {};
             responseJson.fulfillmentText = responseToUser.fulfillmentText;

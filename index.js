@@ -91,7 +91,7 @@ app.post('/', function (request, response) {
             response.json(responseJson);
         }
         
-        else {
+        else if {
             let responseJson = {};
             responseJson.fulfillmentText = responseToUser.fulfillmentText;
             if (responseToUser.fulfillmentMessages) {

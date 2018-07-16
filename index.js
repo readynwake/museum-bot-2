@@ -71,6 +71,11 @@ app.post('/', function (request, response) {
             sendResponse(responseToUser);
         },
         
+        'what.when.who': () => {
+            let responseToUser = { fulfillmentText: obj[what][when][who]};
+            sendResponse(responseToUser);
+        },
+        
         'default': () => {
             let responseToUser = { fulfillmentText: '죄송합니다. 정보가 없는 내용입니다. 다른 궁금한건 없으신가요?' };
             sendResponse(responseToUser);
